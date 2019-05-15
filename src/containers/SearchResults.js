@@ -4,9 +4,9 @@ import _ from 'lodash'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import styles from './SearchResults.module.scss'
-import { savePet } from '../reducers/savedPetsReducer.js'
-import { getSearchResultsFromRemote } from '../reducers/searchResultsReducer.js'
-import { getSettingsFromRemote } from '../reducers/userSettingsReducer.js'
+import { savePet } from '../reducers/savedPetsReducer'
+import { getSearchResultsFromRemote } from '../reducers/searchResultsReducer'
+import { getSettingsFromRemote } from '../reducers/userSettingsReducer'
 
 const placeholderImage =
   'http://clipart-library.com/newimages/box-clip-art-23.png' // free use image
@@ -38,9 +38,9 @@ export class SearchResults extends React.Component {
 
   componentDidMount() {
     if (!this.props.userSettings.locallyModified) {
-      this.props.getSearchResultsFromRemote()
+      this.props.getSettingsFromRemote()
     }
-    this.props.getSettingsFromRemote()
+    this.props.getSearchResultsFromRemote()
   }
 
   componentDidUpdate(prevProps) {

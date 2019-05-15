@@ -1,5 +1,6 @@
 // imports
 import { RSAA } from 'redux-api-middleware'
+import { merge } from 'lodash'
 
 // constants
 const userSettingsUrl =
@@ -59,7 +60,7 @@ const userSettingsReducer = (state = defaultUserSettingsState, action) => {
     },
     [SET_SETTINGS]: (state, action) => {
       console.log(action)
-      return Object.assign(state, {
+      return merge(state, {
         ...action.settings,
         locallyModified: true
       })

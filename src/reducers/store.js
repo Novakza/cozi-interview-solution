@@ -5,7 +5,6 @@ import { apiMiddleware } from 'redux-api-middleware'
 import savedPetsReducer from './savedPetsReducer'
 import searchResultsReducer from './searchResultsReducer'
 import userSettingsReducer from './userSettingsReducer'
-import { saveState } from './localStorage'
 
 export default function configureStore(initialState) {
   const reducer = combineReducers({
@@ -21,10 +20,5 @@ export default function configureStore(initialState) {
     initialState,
     composeEnhancers(applyMiddleware(apiMiddleware))
   )
-  store.subscribe(() => {
-    saveState({
-      savedPets: store.getState().savedPets
-    })
-  })
   return store
 }

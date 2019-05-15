@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import Titlebar from './components/Titlebar/Titlebar'
 import SearchResults from './containers/SearchResults'
 import SavedPets from './containers/SavedPets'
+import UserSettings from './containers/UserSettings'
 
 const reduxStore = configureStore()
 
@@ -21,7 +22,7 @@ const App = () => {
           <div className={styles.pageContent}>
             <Route exact path="/" component={SearchResults} />
             <Route path="/saved" component={SavedPets} />
-            <Route path="/settings" component={Settings} />
+            <Route path="/settings" component={UserSettings} />
             <div className={styles.nav}>
               <Navbar />
             </div>
@@ -29,14 +30,6 @@ const App = () => {
         </div>
       </Router>
     </Provider>
-  )
-}
-
-const Settings = () => {
-  return (
-    <div>
-      <h2>Settings</h2>
-    </div>
   )
 }
 
