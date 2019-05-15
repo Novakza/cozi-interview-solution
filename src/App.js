@@ -1,50 +1,38 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import './App.scss'
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import styles from './App.module.scss'
+import configureStore from './reducers/store'
+import Navbar from './components/Navbar/Navbar'
+import Titlebar from './components/Titlebar/Titlebar'
+import SearchResults from './containers/SearchResults'
+import SavedPets from './containers/SavedPets'
 
-function App() {
+const reduxStore = configureStore()
+
+const App = () => {
   return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Search</Link>
-          </li>
-          <li>
-            <Link to="/saved">Saved</Link>
-          </li>
-          <li>
-            <Link to="/settings">Settings</Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        <Route exact path="/" component={Home} />
-        <Route path="/saved" component={Saved} />
-        <Route path="/settings" component={Settings} />
-      </div>
-    </Router>
+    <Provider store={reduxStore}>
+      <Router>
+        <div className={styles.CoreApp}>
+          <div className={styles.bar}>
+            <Titlebar />
+          </div>
+          <div className={styles.pageContent}>
+            <Route exact path="/" component={SearchResults} />
+            <Route path="/saved" component={SavedPets} />
+            <Route path="/settings" component={Settings} />
+            <div className={styles.nav}>
+              <Navbar />
+            </div>
+          </div>
+        </div>
+      </Router>
+    </Provider>
   )
 }
 
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  )
-}
-
-function Saved() {
-  return (
-    <div>
-      <h2>Saved</h2>
-    </div>
-  )
-}
-
-function Settings() {
+const Settings = () => {
   return (
     <div>
       <h2>Settings</h2>

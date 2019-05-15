@@ -1,0 +1,35 @@
+.searchResults {
+  text-align: center;
+}
+
+.img {
+  max-width: 500px;
+  max-height: 500px;
+  width: auto;
+}
+
+.profile {
+  max-width: 500px;
+  max-height: 150px;
+  overflow-y: scroll;
+  text-align: left;
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+  border: 3px solid #355326;
+}
+
+.selection {
+  margin: auto;
+  width: 50%;
+  display: table;
+  table-layout: fixed;
+}
+
+.save {
+  display: table-cell;
+}
+
+.skip {
+  display: table-cell;
+}

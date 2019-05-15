@@ -1,0 +1,25 @@
+.pageContent {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #f9f8f6;
+}
+
+.nav {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 100px;
+  display: table;
+  table-layout: fixed;
+  background-color: #355326;
+}
+
+.bar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-height: 100px;
+  background-color: #355326;
+}

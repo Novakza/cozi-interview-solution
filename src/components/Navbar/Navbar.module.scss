@@ -1,0 +1,31 @@
+.nav {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.verticalSeperator {
+  display: table-cell;
+  color: #f9f8f6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 4vmin;
+  // prevent highlighting
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.link {
+  // float: left;
+  display: table-cell;
+  color: #f9f8f6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 4vmin;
+}
