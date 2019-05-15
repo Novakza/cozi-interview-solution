@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -14,7 +13,7 @@ const placeholderImage =
 const placeholderPet = {
   id: -1,
   type: 'cat',
-  name: "Shrodinger's cat",
+  name: "Shrodinger's cat (dog?)",
   img: placeholderImage,
   sex: '?',
   age: 0,
@@ -151,20 +150,6 @@ export class SearchResults extends React.Component {
       </div>
     )
   }
-}
-
-SearchResults.propTypes = {
-  searchResults: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      type: PropTypes.string,
-      name: PropTypes.string,
-      img: PropTypes.string,
-      sex: PropTypes.string,
-      age: PropTypes.number,
-      profile: PropTypes.string
-    })
-  )
 }
 
 const mapDispatchToProps = dispatch => {

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import styles from './UserSettings.module.scss'
@@ -77,20 +76,6 @@ export class UserSettings extends React.Component {
       </div>
     )
   }
-}
-
-UserSettings.propTypes = {
-  searchResults: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      type: PropTypes.string,
-      name: PropTypes.string,
-      img: PropTypes.string,
-      sex: PropTypes.string,
-      age: PropTypes.number,
-      profile: PropTypes.string
-    })
-  )
 }
 
 const mapDispatchToProps = dispatch => {

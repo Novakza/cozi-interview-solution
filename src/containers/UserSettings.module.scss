@@ -2,35 +2,35 @@
   width: 50%;
   margin: auto;
   color: #355326;
-}
 
-h1 {
-  color: #355326;
-}
-
-textarea {
-  width: 100%;
-}
-
-.animalPreference {
-  width: 20%;
-  margin: auto;
-  p {
-    display: inline-block;
+  h1 {
+    color: #355326;
   }
-  input {
-    display: inline-block;
-  }
-}
 
-.agePreference {
-  width: 20%;
-  margin: auto;
-  p {
-    display: inline-block;
+  textarea {
+    width: 100%;
   }
-  input {
-    display: inline-block;
+
+  .animalPreference {
     width: 20%;
+    margin: auto;
+    p {
+      display: inline-block;
+    }
+    input {
+      display: inline-block;
+    }
+  }
+
+  .agePreference {
+    width: 20%;
+    margin: auto;
+    p {
+      display: inline-block;
+    }
+    input {
+      display: inline-block;
+      width: 20%;
+    }
   }
 }

@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My solution to Cozi's "Homework" assignment
 
-## Available Scripts
+## Spec Deviations
 
-In the project directory, you can run:
+Some deviations from the spec were necessary through the course of the project, due to a lack of experience in specific areas and a tight time limit.
+- ReactNative was not used, so I've substituted swipes out for buttons where necessary
+- The design looks as close as possible to the spec, but due to rusty CSS experience, the design feels very basic. I focused my attention on React component and reducer organization.
+- Testing was done 100% on my Windows machine, running the latest version of Firefox in 1920x1080. There may be uncaught issues on other browsers, though I tried to make sure everything was compatible.
 
-### `npm start`
+## Engineer Notes
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As requested in the spec:
+- The location of the Search Results URL is on line 5 of searchResultsReducer.js
+- The location of the User Settings URL is on line 6 of the userSettingsReducer.js
+- The default list of saved pets is on line 2 of savedPetsReducer.js, and an example pet lives on lines 4-14.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Smaller notes and thoughts on the project
 
-### `npm test`
+### Frameworks used and why I chose them
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- create-react-app to enable a fast spin-up
+- Redux for centralized and easy application state management
+- redux-api-middleware to enable very easy async API-calling redux actions
+- Jest (comes packaged with create-react-app) and Enzyme for testing
+- Not a framework, but Prettier was used for code formatting (holds all code to a single, agreed-upon look, which I like. The alternative would be a company-wide lint document, which is what I've had before)
 
-### `npm run build`
+### What I'd add given more time
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- More tests are a must. Right now I have tests that cover each redux action and response, but no component tests or Enzyme snapshots
+- React's prop-types framework is a must for clarity in larger projects
+- Clean up / beautify the UI (possibly with bootstrap or another framework)
+  - Loading spinners would be a top priority. The lack of loading spinners makes everything feel "janky".
+- Change paths into Webpack's Module paths (exchanging ugly things like "../../components/theThingWeWant/" into a much more elegant "components/theThingWeWant")
+- The modal is just a paragraph and button--that could easily be changed to something better-looking
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Design considerations and my thoughts on what I'd change
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Filtering and user setting management ought to be a back-end task - having to deal with it on the front-end instead was an interesting challenge
+- Obviously this project isn't designed to be future proof (since it's not a real product!) but I'd change some things out given the chance. "Dog or cat" as a single string with no option for both was a bit painful, and of course, would forbid any new kinds of pet from being added.
+- I briefly attempted to make this project from scratch with babel and flow instead of webpack. Though I scrapped that (for a project of this size, not worth the setup), I am a huge fan of flow typing (or typescript) and would add it to any future projects (especially if I was working with Node instead of React)
 
-### `npm run eject`
+## Final regards
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thank you for this opportunity! This project was enjoyable to work on--spinning up a product from scratch gave me a better appreciation and understanding of the underlying mechanisms, like Webpack.

@@ -27,9 +27,9 @@ const defaultState = {
 }
 
 // action types
-const GET_SEARCH_RESULTS_REQUEST = 'GET_SEARCH_RESULTS_REQUEST'
-const GET_SEARCH_RESULTS_SUCCESS = 'GET_SEARCH_RESULTS_SUCCESS'
-const GET_SEARCH_RESULTS_FAILURE = 'GET_SEARCH_RESULTS_FAILURE'
+export const GET_SEARCH_RESULTS_REQUEST = 'GET_SEARCH_RESULTS_REQUEST'
+export const GET_SEARCH_RESULTS_SUCCESS = 'GET_SEARCH_RESULTS_SUCCESS'
+export const GET_SEARCH_RESULTS_FAILURE = 'GET_SEARCH_RESULTS_FAILURE'
 
 // API Middleware action handlers
 export const getSearchResultsFromRemote = () => {
@@ -51,12 +51,7 @@ export const getSearchResultsFromRemote = () => {
 const searchResultsReducer = (state = defaultState, action) => {
   const reducers = {
     [GET_SEARCH_RESULTS_REQUEST]: (state, action) => {
-      return {
-        searchResults: [], // default behavior
-        // searchResults: state.searchResults, // preserve any existing results when refreshing (for testing only)
-        fetchComplete: false,
-        error: null
-      }
+      return defaultState
     },
     [GET_SEARCH_RESULTS_SUCCESS]: (state, action) => {
       return {

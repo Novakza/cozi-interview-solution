@@ -18,10 +18,10 @@ const defaultUserSettingsState = {
 }
 
 // action types
-const GET_SETTINGS_REQUEST = 'GET_SETTINGS_REQUEST'
-const GET_SETTINGS_SUCCESS = 'GET_SETTINGS_SUCCESS'
-const GET_SETTINGS_FAILURE = 'GET_SETTINGS_FAILURE'
-const SET_SETTINGS = 'SET_SETTINGS'
+export const GET_SETTINGS_REQUEST = 'GET_SETTINGS_REQUEST'
+export const GET_SETTINGS_SUCCESS = 'GET_SETTINGS_SUCCESS'
+export const GET_SETTINGS_FAILURE = 'GET_SETTINGS_FAILURE'
+export const SET_SETTINGS = 'SET_SETTINGS'
 
 // action creators
 export const setSettings = settings => ({
@@ -59,8 +59,7 @@ const userSettingsReducer = (state = defaultUserSettingsState, action) => {
       }
     },
     [SET_SETTINGS]: (state, action) => {
-      console.log(action)
-      return merge(state, {
+      return merge({}, state, {
         ...action.settings,
         locallyModified: true
       })

@@ -17,7 +17,7 @@ const defaultState = {
 }
 
 // action types
-const SAVE_PET = 'SAVE_PET'
+export const SAVE_PET = 'SAVE_PET'
 
 // action creators
 export const savePet = pet => ({
