@@ -32,6 +32,7 @@ As requested in the spec:
   - Loading spinners would be a top priority. The lack of loading spinners makes everything feel "janky".
 - Change paths into Webpack's Module paths (exchanging ugly things like "../../components/theThingWeWant/" into a much more elegant "components/theThingWeWant")
 - The modal is just a paragraph and button--that could easily be changed to something better-looking
+- Rearrange folder structure, perhaps, to use "Ducks" (google "Redux Ducks"). It's not viable for a product of this size, but seems like a good idea on larger projects.
 
 ### Design considerations and my thoughts on what I'd change
 
